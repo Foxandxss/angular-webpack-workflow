@@ -7,7 +7,8 @@
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "start": "npm run server"
+    "start": "npm run server",
+    "component": "gulp component"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,9 @@
     "css-loader": "^0.23.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-template": "^4.0.0",
     "html-webpack-plugin": "^2.7.1",
     "isparta-instrumenter-loader": "^1.0.0",
     "jasmine-core": "^2.3.4",
@@ -49,7 +53,7 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.13",
+    "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
 }
