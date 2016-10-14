@@ -1,6 +1,7 @@
 import angular from 'angular';
 
 import '../style/app.css';
+import '../style/preprocessed.scss';
 
 let app = () => {
   return {
