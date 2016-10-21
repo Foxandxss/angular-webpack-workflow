@@ -70,6 +70,27 @@ module.exports = function makeWebpackConfig () {
   }
 
   /**
+   * Babel query options
+   * Reference: https://github.com/babel/babel-loader#options
+   *            https://github.com/istanbuljs/babel-plugin-istanbul
+   * Instrument JS files with babel-plugin-istanbul for subsequent code coverage reporting
+   * Skips files that end with .spec.js
+   */
+  var babelQueryOptions = null;
+  if (isTest) {
+    babelQueryOptions = {
+      plugins: [
+        [
+          'istanbul',
+          {
+            exclude: [ '**/*.spec.js' ]
+          }
+        ]
+      ]
+    }
+  }
+
+  /**
    * Loaders
    * Reference: http://webpack.github.io/docs/configuration.html#module-loaders
    * List: http://webpack.github.io/docs/list-of-loaders.html
@@ -86,7 +107,8 @@ module.exports = function makeWebpackConfig () {
       // Compiles ES6 and ES7 into ES5 code
       test: /\.js$/,
       loader: 'babel',
-      exclude: /node_modules/
+      exclude: /node_modules/,
+      query: babelQueryOptions
     }, {
       // CSS LOADER
       // Reference: https://github.com/webpack/css-loader
@@ -118,21 +140,6 @@ module.exports = function makeWebpackConfig () {
       loader: 'raw'
     }]
   };
-
-  // ISPARTA LOADER
-  // Reference: https://github.com/ColCh/isparta-instrumenter-loader
-  // Instrument JS files with Isparta for subsequent code coverage reporting
-  // Skips node_modules and files that end with .test.js
-  if (isTest) {
-    config.module.preLoaders.push({
-      test: /\.js$/,
-      exclude: [
-        /node_modules/,
-        /\.spec\.js$/
-      ],
-      loader: 'isparta-loader'
-    })
-  }
 
   /**
    * PostCSS
