@@ -13,7 +13,6 @@ This workflow serves as a starting point for building Angular 1.x applications u
 * Production builds with cache busting.
 * Testing environment using karma to run tests and jasmine as the framework.
 * Code coverage when tests are run.
-* No gulp and no grunt, just npm scripts.
 
 >Warning: Make sure you're using the latest version of Node.js and NPM
 
@@ -71,6 +70,32 @@ npm start
 It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:8080`.
 
 ## Developing
+
+### Generating Components
+Following a consistent directory structure between components offers us the certainty of predictability. We can take advantage of this certainty by creating a gulp task to automate the "instantiation" of our components. The component boilerplate task generates this:
+```
+⋅⋅⋅⋅⋅⋅componentName/
+⋅⋅⋅⋅⋅⋅⋅⋅componentName.js // entry file where all its dependencies load
+⋅⋅⋅⋅⋅⋅⋅⋅componentName.component.js
+⋅⋅⋅⋅⋅⋅⋅⋅componentName.controller.js
+⋅⋅⋅⋅⋅⋅⋅⋅componentName.html
+⋅⋅⋅⋅⋅⋅⋅⋅componentName.styl // scoped to affect only its own template
+⋅⋅⋅⋅⋅⋅⋅⋅componentName.spec.js // contains passing demonstration tests
+```
+
+You may, of course, create these files manually, every time a new module is needed, but that gets quickly tedious.
+To generate a component, run `npm run gulp component -- --name componentName`.
+
+The parameter following the `--name` flag is the name of the component to be created. Ensure that it is unique or it will overwrite the preexisting identically-named component.
+
+The component will be created, by default, inside `src/app/components`. To change this, apply the `--parent` flag, followed by a path relative to `src/app/components/`.
+
+For example, running `npm run component -- --name signup --parent auth` will create a `signup` component at `src/app/components/auth/signup`.  
+
+Running `npm run component -- --name footer --parent ../common` creates a `footer` component at `src/app/common/footer`.  
+
+Because the argument to `--name` applies to the folder name **and** the actual component name, make sure to camelcase the component names.
+
 
 ### Build files
 
