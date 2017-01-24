@@ -4,7 +4,7 @@
 
 A complete, yet simple, starter for Angular using Webpack.
 
-This workflow serves as a starting point for building Angular 1.x applications using Webpack. Should be noted that apart from the pre-installed angular package, this workflow is pretty much generic.
+This workflow serves as a starting point for building Angular 1.x applications using Webpack 2.x. Should be noted that apart from the pre-installed angular package, this workflow is pretty much generic.
 
 * Heavily commented webpack configuration with reasonable defaults.
 * ES6, and ES7 support with babel.
