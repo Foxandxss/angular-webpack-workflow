@@ -33,7 +33,7 @@
     "extract-text-webpack-plugin": "2.0.0-beta.5",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.7.1",
-    "isparta-loader": "^2.0.0",
+    "istanbul-instrumenter-loader": "^1.0.0",
     "jasmine-core": "^2.3.4",
     "karma": "^1.1.0",
     "karma-coverage": "^1.0.0",
