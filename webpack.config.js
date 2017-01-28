@@ -29,9 +29,11 @@ module.exports = function makeWebpackConfig() {
    * Should be an empty object if it's generating a test build
    * Karma will set this when it's a test build
    */
-  config.entry = isTest ? {} : {
-    app: './src/app/app.js'
-  };
+  if(!isTest) {
+    config.entry = {
+      app: './src/app/app.js'
+    };
+  }
 
   /**
    * Output
@@ -102,7 +104,7 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/webpack/style-loader
       // Use style-loader in development.
 
-      loader: isTest ? 'null' : ExtractTextPlugin.extract({
+      loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({
         fallbackLoader: 'style-loader',
         loader: [
           {loader: 'css-loader', query: {sourceMap: true}},
@@ -139,7 +141,7 @@ module.exports = function makeWebpackConfig() {
         /node_modules/,
         /\.spec\.js$/
       ],
-      loader: 'istanbul-instrumenter',
+      loader: 'istanbul-instrumenter-loader',
       query: {
         esModules: true
       }
@@ -192,11 +194,7 @@ module.exports = function makeWebpackConfig() {
     config.plugins.push(
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
       // Only emit files when there are no errors
-      new webpack.NoErrorsPlugin(),
-
-      // Reference: http://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
-      // Dedupe modules in the output
-      new webpack.optimize.DedupePlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
