@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "A workflow for Angular made with Webpack",
   "scripts": {
-    "build": "rimraf dist && webpack --bail --progress --profile",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress",
-    "test": "karma start",
-    "test-watch": "karma start --auto-watch --no-single-run",
+    "build": "node_modules/.bin/rimraf dist && node_modules/.bin/webpack --bail --progress --profile",
+    "server": "node_modules/.bin/webpack-dev-server --history-api-fallback --inline --progress",
+    "test": "node_modules/.bin/karma start",
+    "test-watch": "node_modules/.bin/karma start --auto-watch --no-single-run",
     "start": "npm run server"
   },
   "repository": {
