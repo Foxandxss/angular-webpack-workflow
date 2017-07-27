@@ -1,0 +1,9 @@
+{
+  "indent_size": 2,
+  "html": {
+    "wrap_attributes": "force-aligned"
+  },
+  "js": {
+    "brace_style": "collapse,preserve-inline"
+  }
+}

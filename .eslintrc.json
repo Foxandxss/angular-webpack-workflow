@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jasmine": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": false
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "jasmine"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:angular/bestpractices"
+  ],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "angular/no-service-method": "off"
+  }
+}

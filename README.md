@@ -1,6 +1,6 @@
 # angularjs-webpack
 
-[![Dependency Status](https://david-dm.org/preboot/angularjs-webpack/status.svg)](https://david-dm.org/preboot/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angularjs-webpack/dev-status.svg)](https://david-dm.org/preboot/angularjs-webpack#info=devDependencies)
+[![Dependency Status](https://david-dm.org/vectoritcgroup/angularjs-seed/status.svg)](https://david-dm.org/vectoritcgroup/angularjs-seed#info=dependencies) [![devDependency Status](https://david-dm.org/vectoritcgroup/angularjs-seed/dev-status.svg)](https://david-dm.org/vectoritcgroup/angularjs-seed#info=devDependencies)
 
 A complete, yet simple, starter for Angular using Webpack.
 
@@ -23,7 +23,7 @@ This workflow serves as a starting point for building Angular 1.x applications u
 
 ```bash
 # clone our repo
-$ git clone https://github.com/preboot/angularjs-webpack.git my-app
+$ git clone https://github.com/vectoritcgroup/angularjs-seed.git my-app
 
 # change directory to your app
 $ cd my-app
