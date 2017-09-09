@@ -80,7 +80,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 ## Docker support
 
 * run: `cd containers && ./build.sh && ./run.sh && cd ..`
-* open http://localhost:4000/
+* test: curl http://localhost:4000/
 * stop: `./containers/stop.sh`
 
 ## Testing
