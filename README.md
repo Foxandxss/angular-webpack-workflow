@@ -77,7 +77,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 * single run: `npm run build`
 * build files and watch: `npm start`
 
-### Docker support
+## Docker support
 
 * run: `cd containers && ./build.sh && ./run.sh && cd ..`
 * stop: `./containers/stop.sh`
