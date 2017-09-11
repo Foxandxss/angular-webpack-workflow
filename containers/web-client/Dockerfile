@@ -10,6 +10,9 @@ WORKDIR /app
 ADD . /app
 
 RUN npm install
-CMD ["npm", "start"]
+RUN npm run build
+COPY server.js ./dist/server.js
+
+CMD cd dist && node server.js
 
 EXPOSE 8080

@@ -1,4 +1,7 @@
-CONTAINER=angularjs-webpack
+#!/bin/bash
 
-docker build -f web-client/Dockerfile -t $CONTAINER ../
+CONTAINER=$([ $# -lt 1 ] && echo angularjs-webpack || echo $1)
+DIR=$([ $# -lt 2 ] && echo web-client || echo $2)
+
+docker build -f $DIR/Dockerfile -t $CONTAINER ../
 

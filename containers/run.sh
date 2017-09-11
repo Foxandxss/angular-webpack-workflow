@@ -1,4 +1,6 @@
-CONTAINER=angularjs-webpack
-PORT=4000
+#!/bin/bash
 
-docker run -d -p $PORT:8080  $CONTAINER
+CONTAINER=$([ $# -lt 1 ] && echo angularjs-webpack || echo $1)
+PORT=$([ $# -lt 2 ] && echo 4000 || echo $2)
+
+docker run -d -p $PORT:8080 $CONTAINER
