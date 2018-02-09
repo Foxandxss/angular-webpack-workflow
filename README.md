@@ -77,6 +77,27 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 * single run: `npm run build`
 * build files and watch: `npm start`
 
+## Docker support
+
+* run: `cd containers && ./build.sh && ./run.sh && cd ..`
+* test: curl http://localhost:4000/
+* stop: `./containers/stop.sh`
+
+Container name and port can be specified:
+
+`cd containers
+./build.sh [CONTAINER] [DIR]
+./run.sh [CONTAINER] [PORT]
+./stop.sh [CONTAINER]`
+
+DIR is a directory for Dockerfile inside of containers folder. For example to create separated container for database:
+
+* Create directory, for example "mongodb" of containers folder
+* Create Dockerfile for MongoDB inside
+* Build it like: ./build.sh mongo mongodb
+* Finally run it: ./run.sh mongo 5000
+* Stop: ./stop.sh mongo
+
 ## Testing
 
 #### 1. Unit Tests
