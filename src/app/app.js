@@ -13,6 +13,7 @@ let app = () => {
 class AppCtrl {
   constructor() {
     this.url = 'https://github.com/suvsoob/angularjs-webpack';
+    this.greetingText = 'Hello from Angular!';
   }
 }
 
