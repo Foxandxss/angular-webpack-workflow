@@ -103,8 +103,8 @@ module.exports = function makeWebpackConfig() {
       // Use style-loader in development.
 
       loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: [
+        fallback: 'style-loader',
+        use: [
           {loader: 'css-loader', query: {sourceMap: true}},
           {loader: 'postcss-loader'}
         ],
