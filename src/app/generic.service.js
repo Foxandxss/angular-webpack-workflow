@@ -1,4 +1,4 @@
-class Generic {
+export default class Generic {
 	constructor() {
 		this.name = 'Generic Service';
 	}
@@ -6,6 +6,4 @@ class Generic {
 	getName() {
 		return this.name;
 	}
-}
-
-export default Generic;
+};
