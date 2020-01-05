@@ -30,8 +30,8 @@ module.exports = function karmaConfig (config) {
     },
 
     browsers: [
-      // Run tests using ChromeHeadless
-      'ChromeHeadless'
+      // Run tests using Chrome
+      'Chrome'
     ],
 
     singleRun: true,
