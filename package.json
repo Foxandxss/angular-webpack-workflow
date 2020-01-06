@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/preboot/angularjs-webpack",
   "dependencies": {
-    "angular": "^1.7.0"
+    "angular": "^1.7.0",
+    "angular-ui-router": "^1.0.24",
+    "bootstrap": "^4.4.1"
   },
   "devDependencies": {
     "ajv": "^6.4.0",
@@ -28,6 +30,7 @@
     "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.1.18",
     "clean-webpack-plugin": "^2.0.2",
     "copy-webpack-plugin": "^4.5.1",
@@ -37,7 +40,9 @@
     "html-webpack-plugin": "^3.2.0",
     "istanbul-instrumenter-loader": "^3.0.1",
     "jasmine-core": "^3.1.0",
+    "jquery": "^1.12.4",
     "karma": "^2.0.2",
+    "karma-chrome-launcher": "^1.0.0",
     "karma-coverage": "^1.0.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
@@ -47,6 +52,7 @@
     "node-libs-browser": "^2.1.0",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.4",
+    "popper.js": "^1.16.0",
     "postcss-loader": "^2.1.5",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.21.0",
